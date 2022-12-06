@@ -75,27 +75,25 @@ class _HotelsListWidgetState extends State<HotelsListWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Expanded(
-                                  child: InkWell(
-                                    onTap: () async {
-                                      if (Navigator.of(context).canPop()) {
-                                        context.pop();
-                                      }
-                                      context.pushNamed(
-                                        'reviewsList',
-                                        queryParams: {
-                                          'hotelDocRef': serializeParam(
-                                            listViewHotelsRecord.reference,
-                                            ParamType.DocumentReference,
-                                          ),
-                                        }.withoutNulls,
-                                      );
-                                    },
-                                    child: Text(
-                                      listViewHotelsRecord.review!.toString(),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1,
-                                    ),
+                                InkWell(
+                                  onTap: () async {
+                                    if (Navigator.of(context).canPop()) {
+                                      context.pop();
+                                    }
+                                    context.pushNamed(
+                                      'reviewsList',
+                                      queryParams: {
+                                        'hotelDocRef': serializeParam(
+                                          listViewHotelsRecord.reference,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
+                                    );
+                                  },
+                                  child: Text(
+                                    listViewHotelsRecord.review!.toString(),
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
                                   ),
                                 ),
                                 Expanded(
